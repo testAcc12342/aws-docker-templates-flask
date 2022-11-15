@@ -2,7 +2,7 @@ version: 0.2
 phases:
   build:
     commands:
-      - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_ENDPOINT
-      - docker build -t builtimage .
-      - docker tag builtimage:latest $ECR_IMAGE_URL:latest
-      - docker push $ECR_IMAGE_URL:latest
+      - aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 240634792145.dkr.ecr.us-west-2.amazonaws.com
+      - docker build -t flask-app-repo-nov14 .
+      - docker tag flask-app-repo-nov14:latest 240634792145.dkr.ecr.us-west-2.amazonaws.com/flask-app-repo-nov14:latest
+      - docker push 240634792145.dkr.ecr.us-west-2.amazonaws.com/flask-app-repo-nov14:latest
